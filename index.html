@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🚀 LLM Hub: Modelos Top 🚀</title>
+  <!-- Importar Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Añadir favicon a la página -->
+  <link rel="icon" href="imagenes/iconopaginaweb.jpeg" type="image/png">
+  <link rel="shortcut icon" href="imagenes/iconopaginaweb.jpeg" type="image/jpeg">
+  <style>
+    /* Variables y configuración base */
+    :root {
+      --font-primary: 'Poppins', sans-serif;
+      --font-secondary: 'Roboto', sans-serif;
+      --color-bg-start: #eef1f5;
+      --color-bg-end: #ffffff;
+      --color-card-bg: #ffffff;
+      --color-text-primary: #212529;
+      --color-text-secondary: #495057;
+      --color-header-bg-start: #6a11cb;
+      --color-header-bg-end: #2575fc;
+      --color-accent-1: #007bff;
+      --color-accent-2: #17a2b8;
+      --color-accent-3: #fd7e14;
+      --color-accent-4: #6f42c1;
+      --color-accent-5: #28a745;
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.1);
+      --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.15);
+      --border-radius-large: 16px;
+      --border-radius-medium: 10px;
+      --border-radius-small: 6px;
+      --transition-speed: 0.3s;
+      --nav-height: 60px; /* Example height */
+    }
+
+    /* Variables para modo oscuro */
+    .dark-mode {
+      --color-bg-start: #121212;
+      --color-bg-end: #1e1e1e;
+      --color-card-bg: #2d2d2d;
+      --color-text-primary: #e0e0e0;
+      --color-text-secondary: #b0b0b0;
+      --shadow-light: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-medium: 0 5px 15px rgba(0, 0, 0, 0.3);
+      --shadow-strong: 0 8px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Reset y estilos generales */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-secondary);
+      line-height: 1.7;
+      background: linear-gradient(180deg, var(--color-bg-start), var(--color-bg-end));
+      background-attachment: fixed;
+      color: var(--color-text-primary);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    #top-anchor { position: absolute; top: 0; visibility: hidden; }
+
+    /* Cabecera */
+    header {
+      background: linear-gradient(135deg, var(--color-header-bg-start), var(--color-header-bg-end));
+      color: #ffffff;
+      padding: 60px 20px 80px;
+      text-align: center;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+      box-shadow: var(--shadow-medium);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      background-image: url('imagenes/logoHeader.jpeg'); /* Corregir el nombre del archivo */
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Añadir una capa de gradiente sobre la imagen */
+    header::before {
+      display: none; /* Ocultar completamente el pseudo-elemento */
+    }
+
+    /* Asegurar que el contenido del header esté por encima del fondo */
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada para legibilidad */
+    }
+    header h1 {
+      font-family: var(--font-primary);
+      font-size: 2.6em;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -0.5px;
+    }
+    header p {
+      font-size: 1.2em;
+      font-weight: 300;
+      opacity: 0.95;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.4;
+    }
+
+    /* --- Responsive Navigation Bar --- */
+    nav.main-nav {
+      background-color: #ffffff;
+      padding: 0 20px; /* Padding horizontal only */
+      box-shadow: var(--shadow-light);
+      margin: -60px auto 30px auto;
+      border-radius: var(--border-radius-medium);
+      max-width: 800px;
+      position: relative;
+      z-index: 10;
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: center; /* Center links by default */
+    }
+
+    .nav-links { /* Container for the links */
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      height: 100%;
+      align-items: center;
+    }
+
+    .nav-links li a {
+      text-decoration: none;
+      color: var(--color-text-primary);
+      font-weight: 600;
+      font-family: var(--font-primary);
+      padding: 8px 15px;
+      border-radius: var(--border-radius-small);
+      transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+      display: block; /* Ensure link takes full list item space */
+    }
+
+    .nav-links li a:hover,
+    .nav-links li a:focus {
+      background-color: var(--color-accent-1);
+      color: #ffffff;
+    }
+
+    /* Mobile Styles - Header only */
+    @media (max-width: 768px) {
+      /* Header adjustments */
+      header {
+        padding: 40px 20px 60px; /* Reduced padding */
+        border-bottom-left-radius: 20px; /* Slightly smaller radius */
+        border-bottom-right-radius: 20px;
+      }
+      header h1 {
+        font-size: 2em; /* Smaller font size */
+      }
+      header p {
+        font-size: 1em; /* Smaller font size */
+      }
+
+      /* Navigation adjustments for mobile */
+      nav.main-nav {
+        max-width: 100%; /* Full width on mobile */
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: -40px; /* Adjust overlap based on new header padding */
+        border-radius: 0; /* Optional: remove radius on mobile */
+      }
+      
+      .nav-links {
+        gap: 10px; /* Reduced gap on mobile */
+      }
+      
+      .nav-links li a {
+        padding: 8px 10px; /* Smaller padding */
+        font-size: 0.9em; /* Smaller font size for mobile */
+      }
+      
+      /* Fixed nav adjustments for mobile */
+      .fixed-nav {
+        padding: 8px 10px; /* Smaller padding */
+      }
+      
+      .nav-item {
+        padding: 6px 10px; /* Smaller padding */
+        font-size: 0.85em; /* Smaller font */
+        gap: 4px; /* Less space between icon and text */
+      }
+      
+      .nav-icon {
+        font-size: 1em; /* Smaller icons */
+      }
+    }
+
+    /* Extra small devices */
+    @media (max-width: 480px) {
+      .nav-item {
+        padding: 5px 8px; /* Even smaller padding */
+        font-size: 0.75em; /* Even smaller font */
+      }
+      
+      .nav-icon {
+        font-size: 0.9em; /* Even smaller icons */
+      }
+      
+      /* Adjust fixed nav layout for very small screens */
+      .fixed-nav {
+        gap: 10px; /* Less space between items */
+      }
+    }
+
+    /* Contenedor principal */
+    main {
+      padding: 0 20px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeInSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Tarjetas de herramientas */
+    .ai-tool {
+      background-color: var(--color-card-bg);
+      border-radius: var(--border-radius-large);
+      margin-bottom: 40px;
+      padding: 25px;
+      box-shadow: var(--shadow-light);
+      overflow: hidden;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      border: 1px solid #e9ecef;
+      opacity: 0;
+      animation: fadeInSlideUp 0.6s ease-out forwards;
+    }
+    /* Adjust animation delays if needed after adding nav */
+    main > .ai-tool:nth-of-type(1) { animation-delay: 0.1s; }
+    main > .ai-tool:nth-of-type(2) { animation-delay: 0.2s; }
+    main > .ai-tool:nth-of-type(3) { animation-delay: 0.3s; }
+    main > .ai-tool:nth-of-type(4) { animation-delay: 0.4s; }
+    main > .ai-tool:nth-of-type(5) { animation-delay: 0.5s; }
+    main > .ai-tool:nth-of-type(6) { animation-delay: 0.6s; }
+    main > .ai-tool:nth-of-type(7) { animation-delay: 0.7s; }
+    main > .ai-tool:nth-of-type(8) { animation-delay: 0.8s; } /* If #saved-websites is first */
+
+
+    .ai-tool:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    /* Cabecera de cada tarjeta */
+    .ai-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #f1f3f5;
+    }
+    .ai-logo {
+      width: 55px;
+      height: 55px;
+      margin-right: 15px;
+      border-radius: 50%;
+      background-color: #f1f3f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      font-size: 1.8em;
+      font-weight: 600;
+      color: #adb5bd;
+    }
+    .ai-tool h2 {
+      font-family: var(--font-primary);
+      font-size: 1.8em;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    /* Descripción y etiquetas */
+    .ai-tool p.description {
+      font-size: 1em;
+      color: var(--color-text-secondary);
+      margin: 15px 0;
+    }
+    .tags {
+      margin-bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: 0.75em;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--border-radius-small);
+      background-color: #e9ecef;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    /* Colores para etiquetas */
+    .tag.lenguaje { background-color: #cfe2ff; color: #004085; }
+    .tag.codigo { background-color: #d4edda; color: #155724; }
+    .tag.multimodal { background-color: #fff3cd; color: #856404; }
+    .tag.analisis { background-color: #f8d7da; color: #721c24; }
+    .tag.opensource { background-color: #e2e3e5; color: #495057; }
+    .tag.eficiente { background-color: #d1ecf1; color: #0c5460; }
+    .tag.multilingue { background-color: #f5c6cb; color: #721c24; }
+
+    /* Lista de características */
+    .ai-tool ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 25px;
+    }
+    .ai-tool ul li {
+      font-size: 0.95em;
+      color: var(--color-text-secondary);
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 30px;
+    }
+    .ai-tool ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 20px;
+      height: 20px;
+      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19l12-12-1.41-1.41z'/%3E%3C/svg%3E");
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19l12-12-1.41-1.41z'/%3E%3C/svg%3E");
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+      background-color: var(--color-accent-1);
+    }
+    /* Adjust nth-child selectors if needed */
+    main > .ai-tool:nth-of-type(2n) ul li::before { background-color: var(--color-accent-2); }
+    main > .ai-tool:nth-of-type(3n) ul li::before { background-color: var(--color-accent-3); }
+    main > .ai-tool:nth-of-type(4n) ul li::before { background-color: var(--color-accent-4); }
+    main > .ai-tool:nth-of-type(5n) ul li::before { background-color: var(--color-accent-5); }
+
+
+    /* Botón interactivo */
+    .ai-link {
+      display: inline-block;
+      background: linear-gradient(145deg, var(--color-accent-1), color-mix(in srgb, var(--color-accent-1) 80%, black));
+      color: #ffffff;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: var(--border-radius-medium);
+      font-size: 0.95em;
+      font-weight: 600;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    /* Adjust nth-child selectors if needed */
+    main > .ai-tool:nth-of-type(2n) .ai-link { background: linear-gradient(145deg, var(--color-accent-2), color-mix(in srgb, var(--color-accent-2) 80%, black)); }
+    main > .ai-tool:nth-of-type(3n) .ai-link { background: linear-gradient(145deg, var(--color-accent-3), color-mix(in srgb, var(--color-accent-3) 80%, black)); }
+    main > .ai-tool:nth-of-type(4n) .ai-link { background: linear-gradient(145deg, var(--color-accent-4), color-mix(in srgb, var(--color-accent-4) 80%, black)); }
+    main > .ai-tool:nth-of-type(5n) .ai-link { background: linear-gradient(145deg, var(--color-accent-5), color-mix(in srgb, var(--color-accent-5) 80%, black)); }
+
+    .ai-link:hover,
+    .ai-link:focus {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: var(--shadow-strong);
+      filter: brightness(1.05);
+    }
+    .ai-link:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      filter: brightness(0.95);
+    }
+
+    /* Botón para volver arriba */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--color-header-bg-end);
+      color: white;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-medium);
+      transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+      opacity: 0.9;
+      z-index: 1000;
+    }
+    .back-to-top:hover {
+      transform: scale(1.1);
+      opacity: 1;
+      background-color: var(--color-header-bg-start);
+      box-shadow: var(--shadow-strong);
+    }
+    .back-to-top::before {
+      content: '↑';
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    /* Pie de página */
+    footer {
+      text-align: center;
+      padding: 15px 20px; /* Mantener el padding reducido */
+      margin-top: 10px; /* Ajustar el margen superior para mantener proporción */
+      font-size: 0.9em;
+      color: #6c757d;
+      border-top: 1px solid #dee2e6;
+      background-color: var(--color-bg-end);
+    }
+
+    /* Estilos para la sección de guardar URL (ahora en modal) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5); /* Black w/ opacity */
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: var(--border-radius-large);
+      box-shadow: var(--shadow-strong);
+      position: relative;
+    }
+    .modal-close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+    .modal-close:hover,
+    .modal-close:focus {
+      color: black;
+      text-decoration: none;
+    }
+    .modal-title {
+      font-family: var(--font-primary);
+      font-size: 1.6em;
+      margin-bottom: 20px;
+      color: var(--color-text-primary);
+      border-bottom: 1px solid #f1f3f5;
+      padding-bottom: 10px;
+      text-align: center;
+    }
+
+    #save-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--color-text-secondary);
+    }
+    #save-form input[type="url"],
+    #save-form input[type="text"],
+    #save-form input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ced4da;
+      border-radius: var(--border-radius-medium);
+      font-size: 1em;
+      font-family: var(--font-secondary);
+    }
+     #save-form input[type="file"] {
+       margin-bottom: 5px; /* Less margin for file input */
+     }
+    #save-form button[type="submit"] {
+      background: linear-gradient(145deg, var(--color-accent-1), color-mix(in srgb, var(--color-accent-1) 80%, black));
+      color: #ffffff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: var(--border-radius-medium);
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+      display: block; /* Make button block */
+      width: 100%; /* Full width */
+      margin-top: 10px;
+    }
+    #save-form button[type="submit"]:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      filter: brightness(1.05);
+    }
+    #message-area {
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: var(--border-radius-small);
+      font-weight: 500;
+      text-align: center;
+    }
+    .message-success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .message-error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .image-preview {
+      margin-top: 10px;
+      margin-bottom: 15px;
+      max-width: 100%;
+      max-height: 150px;
+      border-radius: var(--border-radius-small);
+      display: none; /* Hidden initially */
+      border: 1px solid #ddd;
+    }
+
+
+    /* Estilos para la lista de sitios guardados */
+    #saved-websites {
+        /* Now an .ai-tool section */
+    }
+    #saved-websites h2 {
+        /* Inherits from .ai-tool h2 if needed, or define specifically */
+        font-family: var(--font-primary);
+        font-size: 1.6em; /* Slightly smaller than card titles */
+        margin-bottom: 15px;
+        color: var(--color-text-primary);
+        border-bottom: 1px solid #f1f3f5;
+        padding-bottom: 10px;
+    }
+    #saved-websites ul {
+        list-style: none;
+        padding: 0;
+    }
+    #saved-websites li {
+        background-color: #f8f9fa;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: var(--border-radius-medium);
+        border: 1px solid #e9ecef;
+        position: relative; /* For delete button positioning */
+    }
+     #saved-websites li strong {
+        display: block;
+        font-size: 1.1em;
+        color: var(--color-text-primary);
+        margin-bottom: 5px;
+    }
+    #saved-websites li a {
+        color: var(--color-accent-1);
+        text-decoration: none;
+        word-break: break-all;
+        display: block; /* Ensure it takes space */
+        margin-bottom: 8px;
+    }
+     #saved-websites li a:hover {
+        text-decoration: underline;
+    }
+    #saved-websites li p {
+        font-size: 0.95em;
+        color: var(--color-text-secondary);
+        margin-top: 0; /* Adjusted */
+        margin-bottom: 10px; /* Space before delete button */
+    }
+    .website-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--border-radius-medium);
+      margin-bottom: 10px;
+      display: block;
+      box-shadow: var(--shadow-light);
+      border: 1px solid #e9ecef;
+      object-fit: cover;
+      max-height: 150px; /* Reducir altura máxima en pantallas grandes */
+      width: 100%;
+    }
+    .delete-btn {
+      background-color: #dc3545;
+      color: white;
+      border: none;
+      border-radius: var(--border-radius-small);
+      padding: 5px 10px;
+      font-size: 0.85em;
+      cursor: pointer;
+      transition: background-color var(--transition-speed) ease;
+      position: absolute; /* Position relative to li */
+      bottom: 10px;
+      right: 10px;
+    }
+    .delete-btn:hover {
+      background-color: #bd2130;
+    }
+
+    /* Fixed Nav Styles (from previous attempt, might need adjustment) */
+    .fixed-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(135deg, var(--color-header-bg-start), var(--color-header-bg-end));
+      z-index: 1000;
+      padding: 10px 20px;
+      box-shadow: var(--shadow-medium);
+      transform: translateY(-100%);
+      transition: transform 0.3s ease;
+      display: flex; /* Use flex for layout */
+      justify-content: center; /* Center items */
+      gap: 20px; /* Space between items */
+    }
+    .fixed-nav.visible {
+      transform: translateY(0);
+    }
+    .nav-item { /* Style for items in fixed nav */
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: var(--border-radius-medium);
+      transition: all var(--transition-speed) ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-item:hover {
+       background: rgba(255, 255, 255, 0.1);
+    }
+    .nav-item.active {
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .nav-icon {
+      font-size: 1.2em;
+    }
+
+    /* Estilos para el botón de modo oscuro - Ajustado al nivel del botón de volver arriba */
+    .theme-toggle {
+      position: fixed;
+      bottom: 20px; /* Mismo nivel que el botón de volver arriba */
+      left: 20px; /* Mantener en el lado izquierdo */
+      background-color: var(--color-header-bg-end);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: var(--shadow-medium);
+      transition: transform var(--transition-speed) ease, opacity var(--transition-speed) ease;
+      opacity: 0.8;
+      z-index: 1000;
+      cursor: pointer;
+      border: none;
+    }
+    .theme-toggle:hover {
+      transform: scale(1.1);
+      opacity: 1;
+      background-color: var(--color-header-bg-start);
+      box-shadow: var(--shadow-strong);
+    }
+    .theme-toggle::before {
+      content: '🌙';
+      font-size: 1.1em; /* Ligeramente más pequeño */
+      line-height: 1;
+    }
+    .dark-mode .theme-toggle::before {
+      content: '☀️';
+    }
+
+    /* Ajuste para dispositivos móviles */
+    @media (max-width: 768px) {
+      .theme-toggle {
+        bottom: 20px; /* Mantener al mismo nivel que el botón de volver arriba */
+        left: 15px;
+        width: 32px;
+        height: 32px;
+      }
+      .theme-toggle::before {
+        font-size: 1em;
+      }
+    }
+
+    /* Dispositivos muy pequeños */
+    @media (max-width: 480px) {
+      .theme-toggle {
+        bottom: 20px; /* Mantener al mismo nivel que el botón de volver arriba */
+        left: 15px;
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    /* Ajustes adicionales para modo oscuro */
+    .dark-mode .ai-tool {
+      border-color: #444;
+    }
+    .dark-mode .nav-links li a {
+      color: var(--color-text-primary);
+    }
+    .dark-mode nav.main-nav {
+      background-color: #2d2d2d;
+    }
+    .dark-mode .modal-content {
+      background-color: #2d2d2d;
+      border-color: #444;
+    }
+    .dark-mode .modal-close {
+      color: #ddd;
+    }
+    .dark-mode #saved-websites li {
+      background-color: #333;
+      border-color: #444;
+    }
+    .dark-mode footer {
+      background-color: var(--color-bg-end);
+      border-color: #444;
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+      .ai-tool {
+        padding: 20px; /* Reducir el padding */
+        margin-bottom: 30px; /* Reducir el margen inferior */
+      }
+      
+      .ai-header {
+        margin-bottom: 15px; /* Reducir el margen inferior */
+        padding-bottom: 12px; /* Reducir el padding inferior */
+      }
+      
+      .ai-logo {
+        width: 45px; /* Reducir el tamaño del logo */
+        height: 45px;
+        margin-right: 12px; /* Reducir el margen derecho */
+      }
+      
+      .ai-tool h2 {
+        font-size: 1.5em; /* Reducir el tamaño del título */
+      }
+      
+      .ai-tool p.description {
+        font-size: 0.95em; /* Reducir el tamaño de la descripción */
+        margin: 12px 0; /* Reducir los márgenes */
+        line-height: 1.5; /* Reducir el interlineado */
+      }
+      
+      .tags {
+        margin-bottom: 15px; /* Reducir el margen inferior */
+      }
+      
+      .ai-tool ul {
+        margin-bottom: 20px; /* Reducir el margen inferior */
+      }
+      
+      .ai-tool ul li {
+        margin-bottom: 8px; /* Reducir el espacio entre elementos de la lista */
+        font-size: 0.9em; /* Reducir el tamaño del texto */
+      }
+      
+      .ai-link {
+        padding: 10px 20px; /* Reducir el padding del botón */
+        font-size: 0.9em; /* Reducir el tamaño del texto del botón */
+      }
+    }
+
+    /* Dispositivos muy pequeños */
+    @media (max-width: 480px) {
+      .ai-tool {
+        padding: 12px; /* Reducir aún más el padding */
+        margin-bottom: 20px; /* Reducir aún más el margen inferior */
+        border-radius: var(--border-radius-medium); /* Reducir el radio de borde */
+      }
+      
+      .ai-logo {
+        width: 35px; /* Reducir aún más el tamaño del logo */
+        height: 35px;
+      }
+      
+      .ai-tool h2 {
+        font-size: 1.2em; /* Reducir aún más el tamaño del título */
+      }
+      
+      .ai-tool p.description {
+        font-size: 0.85em; /* Reducir más el tamaño de la descripción */
+        margin: 8px 0; /* Reducir más los márgenes */
+        line-height: 1.4; /* Reducir más el interlineado */
+      }
+      
+      .tags {
+        gap: 5px; /* Reducir el espacio entre etiquetas */
+      }
+      
+      .tag {
+        font-size: 0.7em; /* Reducir el tamaño de las etiquetas */
+        padding: 3px 8px; /* Reducir el padding de las etiquetas */
+      }
+      
+      .ai-tool ul li {
+        padding-left: 22px; /* Reducir el padding izquierdo */
+        margin-bottom: 6px; /* Reducir más el espacio entre elementos */
+        font-size: 0.85em; /* Reducir más el tamaño del texto */
+      }
+      
+      .ai-tool ul li::before {
+        width: 14px; /* Reducir más el tamaño del icono de check */
+        height: 14px;
+        top: 3px;
+      }
+      
+      .ai-link {
+        padding: 8px 16px; /* Reducir más el padding del botón */
+        font-size: 0.85em; /* Reducir más el tamaño del texto del botón */
+      }
+    }
+
+    /* Ajuste para que la última tarjeta esté casi pegada al footer */
+    main > .ai-tool:last-child {
+      margin-bottom: 10px; /* Ajustar a un valor proporcional pero reducido */
+    }
+
+    /* Pie de página */
+    footer {
+      text-align: center;
+      padding: 15px 20px; /* Mantener el padding reducido */
+      margin-top: 10px; /* Ajustar el margen superior para mantener proporción */
+      font-size: 0.9em;
+      color: #6c757d;
+      border-top: 1px solid #dee2e6;
+      background-color: var(--color-bg-end);
+    }
+
+    /* Ajuste adicional para dispositivos móviles */
+    @media (max-width: 768px) {
+      main > .ai-tool:last-child {
+        margin-bottom: 8px; /* Valor más pequeño para móviles */
+      }
+      
+      footer {
+        margin-top: 8px; /* Valor más pequeño para móviles */
+      }
+    }
+
+    /* Dispositivos muy pequeños */
+    @media (max-width: 480px) {
+      main > .ai-tool:last-child {
+        margin-bottom: 5px; /* Valor aún más pequeño para dispositivos muy pequeños */
+      }
+      
+      footer {
+        margin-top: 5px; /* Valor aún más pequeño para dispositivos muy pequeños */
+        padding: 12px 15px; /* Reducir aún más el padding en dispositivos muy pequeños */
+      }
+    }
+
+    /* Mejoras para la presentación de sitios guardados */
+    #saved-websites li {
+      background-color: #f8f9fa;
+      border: 1px solid #e9ecef;
+      border-radius: var(--border-radius-medium);
+      padding: 15px;
+      margin-bottom: 15px;
+      position: relative;
+      transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    }
+
+    #saved-websites li:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .dark-mode #saved-websites li {
+      background-color: #333;
+      border-color: #444;
+    }
+
+    .dark-mode .website-image {
+      border-color: #444;
+    }
+
+    /* Estilos para notas personales en sitios guardados */
+    .site-notes {
+      background-color: rgba(255, 255, 255, 0.7);
+      border-left: 3px solid var(--color-accent-3);
+      padding: 8px 12px;
+      margin: 10px 0;
+      font-style: italic;
+      border-radius: 0 var(--border-radius-small) var(--border-radius-small) 0;
+    }
+
+    .dark-mode .site-notes {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-left-color: var(--color-accent-3);
+    }
+
+    /* Estilos mejorados para el formulario en pantallas pequeñas */
+    @media (max-width: 768px) {
+      .modal-content {
+        width: 90%;
+        padding: 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+      }
+      
+      .modal-title {
+        font-size: 1.4em;
+        margin-bottom: 15px;
+        padding-bottom: 8px;
+      }
+      
+      #save-form label {
+        margin-bottom: 5px;
+        font-size: 0.9em;
+      }
+      
+      #save-form input[type="url"],
+      #save-form input[type="text"],
+      #save-form textarea {
+        padding: 10px;
+        margin-bottom: 12px;
+        font-size: 0.95em;
+      }
+      
+      #save-form textarea {
+        min-height: 60px;
+      }
+      
+      #notes-input {
+        min-height: 50px;
+      }
+      
+      #save-form button[type="submit"] {
+        padding: 10px 20px;
+        font-size: 0.95em;
+      }
+    }
+
+    /* Ajustes ultra compactos para el formulario en todas las pantallas */
+    .modal-content {
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 15px;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .modal-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+
+    #save-form label {
+      font-size: 0.8em;
+      margin-bottom: 2px;
+      display: inline-block;
+    }
+
+    #save-form input[type="url"],
+    #save-form input[type="text"],
+    #save-form textarea {
+      padding: 6px;
+      margin-bottom: 6px;
+      font-size: 0.9em;
+      line-height: 1.2;
+    }
+
+    #save-form textarea {
+      min-height: 40px;
+      max-height: 60px;
+    }
+
+    #notes-input {
+      min-height: 35px;
+      max-height: 50px;
+    }
+
+    /* Mejoras para la previsualización de imágenes */
+    .image-preview-container {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 15px;
+      margin-top: 10px;
+      border: 1px dashed #ced4da;
+      border-radius: var(--border-radius-medium);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f8f9fa;
+      position: relative;
+    }
+
+    .image-preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Cambiado de 'contain' a 'cover' */
+      display: none;
+    }
+
+    .image-preview-placeholder {
+      color: #adb5bd;
+      font-size: 0.9em;
+      text-align: center;
+      padding: 15px;
+    }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 480px) {
+      .image-preview-container {
+        height: 100px;
+        margin-bottom: 10px;
+      }
+    }
+
+    /* Ajustes para pantallas muy pequeñas */
+    @media (max-width: 360px) {
+      .image-preview-container {
+        height: 80px;
+        margin-bottom: 8px;
+      }
+    }
+
+    /* Mejoras para la experiencia de usuario en el formulario */
+    .modal {
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content {
+      max-height: 85vh;
+      overflow-y: auto;
+      scrollbar-width: thin;
+    }
+
+    .modal-content::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background-color: #aaa;
+      border-radius: 3px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background-color: #f1f1f1;
+    }
+
+    /* Estilos para el botón de eliminar imagen */
+    .remove-image-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background-color: rgba(220, 53, 69, 0.8);
+      color: white;
+      border: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .image-preview-container:hover .remove-image-btn {
+      opacity: 1;
+    }
+
+    .remove-image-btn:hover {
+      background-color: rgb(220, 53, 69);
+    }
+
+    /* Ajustes para dispositivos móviles */
+    @media (max-width: 768px) {
+      .image-preview-container {
+        height: 120px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .image-preview-container {
+        height: 100px;
+      }
+    }
+
+    /* Contenedor para imágenes más estilizado */
+    .website-image-container {
+      position: relative;
+      width: 100%;
+      max-width: 400px; /* Limitar ancho máximo en pantallas grandes */
+      margin: 0 auto 15px auto; /* Centrar la imagen */
+      overflow: hidden;
+      border-radius: var(--border-radius-medium);
+    }
+
+    /* Ajustes para pantallas medianas */
+    @media (min-width: 768px) {
+      .website-image {
+        max-height: 180px;
+      }
+      
+      .website-image-container {
+        max-width: 350px;
+      }
+    }
+
+    /* Ajustes para pantallas grandes */
+    @media (min-width: 992px) {
+      .website-image-container {
+        max-width: 320px;
+        float: right;
+        margin: 0 0 10px 15px; /* Margen a la izquierda para que el texto fluya alrededor */
+        width: 40%; /* Ocupar solo el 40% del ancho */
+      }
+      
+      .website-image {
+        max-height: 160px;
+      }
+      
+      /* Limpiar el float después de cada elemento de la lista */
+      #saved-websites li::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+    }
+
+    /* Estilos mejorados para el botón de selección de imagen */
+    .custom-file-upload {
+      display: inline-block;
+      padding: 8px 12px;
+      cursor: pointer;
+      background: linear-gradient(145deg, var(--color-accent-2), color-mix(in srgb, var(--color-accent-2) 80%, black));
+      border-radius: var(--border-radius-medium);
+      border: none;
+      font-size: 0.85em;
+      color: white;
+      transition: all var(--transition-speed) ease;
+      text-align: center;
+      width: 100%;
+      margin-bottom: 20px; /* Aumentado significativamente */
+      margin-top: 5px;
+      box-shadow: var(--shadow-light);
+    }
+
+    .custom-file-upload:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-medium);
+      filter: brightness(1.1);
+    }
+
+    .custom-file-upload:active {
+      transform: translateY(0);
+      box-shadow: var(--shadow-light);
+      filter: brightness(0.95);
+    }
+
+    .custom-file-upload i {
+      margin-right: 5px;
+      font-size: 1em;
+    }
+
+    /* Estilo para modo oscuro */
+    .dark-mode .custom-file-upload {
+      background: linear-gradient(145deg, var(--color-accent-2), color-mix(in srgb, var(--color-accent-2) 60%, black));
+    }
+
+    /* Ajustes para pantallas pequeñas */
+    @media (max-width: 480px) {
+      .custom-file-upload {
+        margin-bottom: 15px; /* Aumentado para móviles */
+      }
+      
+      .image-preview-container {
+        margin-top: 8px;
+      }
+    }
+
+    /* Ocultar el input file original */
+    input[type="file"] {
+      display: none;
+    }
+
+  </style>
+</head>
+<body>
+  <a id="top-anchor"></a>
+
+  <header>
+    <h1>🚀 LLM Hub: Modelos Top 🚀</h1>
+    <p>Tu guía móvil para los Modelos de Lenguaje Grande (LLMs) más influyentes.</p>
+  </header>
+
+  <!-- Nueva Barra de Navegación (sin hamburguesa) -->
+  <nav class="main-nav" id="main-navigation">
+    <!-- Links List -->
+    <ul class="nav-links" id="nav-link-list">
+      <li><a href="#top-anchor">Inicio</a></li>
+      <li><a href="#saved-websites">Sitios Guardados</a></li>
+      <li><a href="#ai-tools-section">Herramientas AI</a></li>
+      <!-- Puedes añadir más enlaces aquí -->
+    </ul>
+  </nav>
+
+  <!-- Fixed Nav (Hidden initially) -->
+  <nav class="fixed-nav">
+    <a href="#top-anchor" id="home-btn-fixed" class="nav-item active"><span class="nav-icon">🏠</span> Inicio</a>
+    <a href="#saved-websites" id="saved-sites-btn-fixed" class="nav-item"><span class="nav-icon">⭐</span> Sitios Guardados</a>
+    <a href="#" id="save-website-btn-fixed" class="nav-item highlight"><span class="nav-icon">➕</span> Guardar Sitio</a>
+  </nav>
+
+  <!-- Modal para guardar sitio web -->
+  <div id="save-modal" class="modal">
+    <div class="modal-content">
+      <button id="modal-close" class="modal-close">&times;</button>
+      <h3 class="modal-title">Guardar Nuevo Sitio</h3>
+      <form id="save-form">
+        <div>
+          <label for="url-input">URL del Sitio:</label>
+          <input type="url" id="url-input" name="url" placeholder="https://ejemplo.com" required>
+        </div>
+        <div>
+          <label for="title-input">Título (opcional):</label>
+          <input type="text" id="title-input" name="title" placeholder="Nombre del sitio">
+        </div>
+        <div>
+          <label for="notes-input">Notas personales:</label>
+          <textarea id="notes-input" name="notes" placeholder="Añade tus notas o comentarios personales"></textarea>
+        </div>
+        <div>
+          <label for="image-input">Imagen (opcional):</label>
+          <label for="image-input" class="custom-file-upload">
+            <i>📷</i> Seleccionar imagen
+          </label>
+          <input type="file" id="image-input" name="image" accept="image/*">
+          
+          <div class="preview-section">
+            <div class="image-preview-container">
+              <div class="image-preview-placeholder">Vista previa</div>
+              <img id="image-preview" class="image-preview" alt="Vista previa">
+              <button type="button" class="remove-image-btn" id="remove-image-btn">&times;</button>
+            </div>
+          </div>
+        </div>
+        <button type="submit">Guardar</button>
+      </form>
+      <div id="message-area"></div>
+    </div>
+  </div>
+
+  <main id="ai-tools-section"> <!-- ID added here -->
+    <!-- Sección para sitios guardados -->
+    <section id="saved-websites" class="ai-tool">
+      <div class="ai-header">
+        <div class="ai-logo">⭐</div>
+        <h2>Mis Sitios Guardados</h2>
+      </div>
+      <p class="description">Tu colección personal de sitios web relacionados con inteligencia artificial y modelos de lenguaje.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Personal</span>
+        <span class="tag multimodal">Favoritos</span>
+        <span class="tag codigo">Guardados</span>
+      </div>
+      <ul>
+        <!-- Los sitios guardados se cargarán aquí -->
+      </ul>
+    </section>
+
+    <!-- Tarjeta 1: GPT-4 -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/chatgpt.png" alt="ChatGPT Logo" class="ai-logo">
+        <h2>CHATGPT-4 (OpenAI)</h2>
+      </div>
+      <p class="description">El referente de la industria en capacidades de lenguaje, razonamiento y creatividad multimodal.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag multimodal">Multimodal</span>
+        <span class="tag codigo">Código</span>
+        <span class="tag analisis">Análisis</span>
+      </div>
+      <ul>
+        <li>Razonamiento lógico y abstracto avanzado</li>
+        <li>Generación de contenido creativo y técnico</li>
+        <li>Capacidad para analizar imágenes (GPT-4V)</li>
+        <li>Amplia base de conocimientos generales</li>
+      </ul>
+      <a href="https://openai.com/chatgpt" target="_blank" class="ai-link">Usar en ChatGPT</a>
+    </section>
+
+    <!-- Tarjeta 2: Claude 3 -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/claude.png" alt="Claude Logo" class="ai-logo">
+        <h2>Claude 3 (Anthropic)</h2>
+      </div>
+      <p class="description">Modelos que equilibran velocidad, inteligencia y seguridad de IA para una experiencia robusta.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag analisis">Análisis</span>
+        <span class="tag multimodal">Multimodal</span>
+        <span class="tag eficiente">Rápido</span>
+      </div>
+      <ul>
+        <li>Rendimiento superior en benchmarks complejos</li>
+        <li>Procesamiento de documentos largos</li>
+        <li>Menor propensión a respuestas dañinas</li>
+        <li>Capacidades de visión avanzadas</li>
+      </ul>
+      <a href="https://claude.ai/" target="_blank" class="ai-link">Probar Claude</a>
+    </section>
+
+    <!-- Tarjeta 3: Gemini -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/gemini.png" alt="Gemini Logo" class="ai-logo">
+        <h2>Gemini (Google)</h2>
+      </div>
+      <p class="description">La IA multimodal nativa de Google, diseñada para comprender y operar con diversos tipos de información.</p>
+      <div class="tags">
+        <span class="tag multimodal">Multimodal</span>
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag codigo">Código</span>
+        <span class="tag">Google</span>
+      </div>
+      <ul>
+        <li>Integración profunda con el ecosistema Google</li>
+        <li>Modelos optimizados: Ultra, Pro y Nano</li>
+        <li>Fuerte en tareas combinadas de texto, imagen y código</li>
+        <li>Acceso a información en tiempo real</li>
+      </ul>
+      <a href="https://gemini.google.com/" target="_blank" class="ai-link">Explorar Gemini</a>
+    </section>
+
+    <!-- Tarjeta 4: DeepSeek -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/deepseek.jpeg" alt="DeepSeek Logo" class="ai-logo">
+        <h2>DeepSeek</h2>
+      </div>
+      <p class="description">Modelos open-source de alto rendimiento, destacados en tareas de programación.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag codigo">Código</span>
+        <span class="tag opensource">Open Source</span>
+        <span class="tag eficiente">Eficiente</span>
+      </div>
+      <ul>
+        <li>Desempeño sobresaliente en benchmarks de codificación</li>
+        <li>Modelos base y de chat disponibles públicamente</li>
+        <li>Entrenados con grandes volúmenes de datos</li>
+        <li>Comunidad activa y en continuo desarrollo</li>
+      </ul>
+      <a href="https://www.deepseek.com/" target="_blank" class="ai-link">Conocer DeepSeek</a>
+    </section>
+
+    <!-- Tarjeta para Qwen -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <div class="ai-logo">🧠</div>
+        <h2>Qwen (Alibaba)</h2>
+      </div>
+      <p class="description">Modelo de lenguaje avanzado desarrollado por Alibaba Cloud, con capacidades multilingües y multimodales.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag multimodal">Multimodal</span>
+        <span class="tag eficiente">Rápido</span>
+        <span class="tag">Alibaba</span>
+      </div>
+      <ul>
+        <li>Excelente rendimiento en tareas multilingües</li>
+        <li>Capacidades avanzadas de razonamiento</li>
+        <li>Procesamiento eficiente de consultas complejas</li>
+        <li>Interfaz intuitiva y accesible</li>
+      </ul>
+      <a href="https://chat.qwen.ai/" target="_blank" class="ai-link">Probar Qwen</a>
+    </section>
+
+    <!-- Tarjeta 6: Mistral AI -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/mistral.jpeg" alt="Mistral AI Logo" class="ai-logo">
+        <h2>Mistral AI</h2>
+      </div>
+      <p class="description">Innovación europea en IA con modelos abiertos, eficientes y de alto rendimiento.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag opensource">Open Source</span>
+        <span class="tag eficiente">Eficiente</span>
+        <span class="tag">MoE</span>
+      </div>
+      <ul>
+        <li>Excelente relación rendimiento/tamaño</li>
+        <li>Modelos abiertos populares (Mistral 7B, Mixtral 8x7B)</li>
+        <li>Arquitectura Mixture-of-Experts para eficiencia</li>
+        <li>Modelos comerciales competitivos</li>
+      </ul>
+      <a href="https://mistral.ai/" target="_blank" class="ai-link">Visitar Mistral AI</a>
+    </section>
+
+    <!-- Tarjeta 7: Google AI Studio -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/googleaistudio.jpeg" alt="Google AI Studio Logo" class="ai-logo">
+        <h2>Google AI Studio</h2>
+      </div>
+      <p class="description">Plataforma basada en navegador para prototipar y experimentar con modelos generativos de IA.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag">Experimentación</span>
+        <span class="tag">Modelos AI</span>
+        <span class="tag">Google</span>
+      </div>
+      <ul>
+        <li>Prueba rápida de prompts con modelos Gemini</li>
+        <li>Ajuste de parámetros del modelo</li>
+        <li>Creación de prompts estructurados</li>
+        <li>Exportación de código (Python, JS, etc.)</li>
+      </ul>
+      <a href="https://aistudio.google.com/prompts/new_chat" target="_blank" class="ai-link">Ir a AI Studio</a>
+    </section>
+
+    <!-- Tarjeta 8: Llama 3 -->
+    <section class="ai-tool">
+      <div class="ai-header">
+        <img src="imagenes/llama3.jpeg" alt="Llama 3 Logo" class="ai-logo">
+        <h2>Llama 3 (Meta)</h2>
+      </div>
+      <p class="description">La nueva generación de modelos abiertos de Meta, diseñados para un rendimiento y eficiencia superiores.</p>
+      <div class="tags">
+        <span class="tag lenguaje">Lenguaje</span>
+        <span class="tag opensource">Open Source</span>
+        <span class="tag eficiente">Eficiente</span>
+        <span class="tag">Meta</span>
+      </div>
+      <ul>
+        <li>Modelos con 8B y 70B parámetros disponibles</li>
+        <li>Mejoras significativas en razonamiento y codificación</li>
+        <li>Entrenado con un conjunto de datos masivo y diverso</li>
+        <li>Optimizado para diversas plataformas y casos de uso</li>
+      </ul>
+      <a href="https://llama.meta.com/" target="_blank" class="ai-link">Descubrir Llama 3</a>
+    </section>
+  </main>
+
+  <!-- Botón flotante para volver arriba -->
+  <a href="#top-anchor" class="back-to-top" aria-label="Volver Arriba"></a>
+
+  <!-- Botón para cambiar tema -->
+  <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema"></button>
+
+  <footer>
+    <p>© 2025 Gonzalo Rolon | Explorando el universo LLM</p>
+  </footer>
+
+  <script>
+    // Selectors for website saving functionality
+    const saveForm = document.getElementById('save-form');
+    const urlInput = document.getElementById('url-input');
+    const imageInput = document.getElementById('image-input');
+    const imagePreview = document.getElementById('image-preview');
+    const messageArea = document.getElementById('message-area');
+    const savedWebsitesList = document.querySelector('#saved-websites ul');
+    const saveModal = document.getElementById('save-modal');
+    const saveWebsiteBtnFixed = document.getElementById('save-website-btn-fixed');
+    const modalClose = document.getElementById('modal-close');
+    const fixedNav = document.querySelector('.fixed-nav');
+    const navItems = document.querySelectorAll('.nav-item');
+    const mainNavLinks = document.querySelectorAll('.main-nav .nav-links a');
+
+    // --- Navigation Logic ---
+    // Handle fixed navigation appearance on scroll
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 200) {
+        fixedNav.classList.add('visible');
+      } else {
+        fixedNav.classList.remove('visible');
+      }
+    });
+
+    // Handle smooth scroll for main nav items
+    mainNavLinks.forEach(item => {
+        item.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            const targetSection = document.querySelector(href);
+            if (targetSection) {
+                let offset = 0;
+                if (fixedNav.classList.contains('visible')) {
+                    offset = fixedNav.offsetHeight;
+                }
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            } else if (href === '#top-anchor') {
+                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+    });
+
+    // --- Modal Logic ---
+    // Open modal from fixed nav button
+    if (saveWebsiteBtnFixed) {
+        saveWebsiteBtnFixed.addEventListener('click', openModal);
+    }
+
+    function openModal(e) {
+      e.preventDefault();
+      saveModal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal via close button
+    if (modalClose) {
+        modalClose.addEventListener('click', closeModal);
+    }
+
+    // Close modal by clicking outside the content
+    saveModal.addEventListener('click', function(e) {
+      if (e.target === saveModal) {
+        closeModal();
+      }
+    });
+
+    function closeModal() {
+        saveModal.style.display = 'none';
+        document.body.style.overflow = '';
+        messageArea.textContent = '';
+        messageArea.className = '';
+        // saveForm.reset();
+        // imagePreview.style.display = 'none';
+    }
+
+    // --- Image Preview Logic ---
+    const removeImageBtn = document.getElementById('remove-image-btn');
+    const imagePreviewPlaceholder = document.querySelector('.image-preview-placeholder');
+
+    if (imageInput) {
+        imageInput.addEventListener('change', function() {
+          const file = this.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+              imagePreview.src = e.target.result;
+              imagePreview.style.display = 'block';
+              imagePreviewPlaceholder.style.display = 'none';
+              removeImageBtn.style.display = 'flex';
+            }
+            reader.readAsDataURL(file);
+          } else {
+            resetImagePreview();
+          }
+        });
+    }
+
+    if (removeImageBtn) {
+        removeImageBtn.addEventListener('click', function() {
+            imageInput.value = '';
+            resetImagePreview();
+        });
+    }
+
+    function resetImagePreview() {
+        imagePreview.src = '';
+        imagePreview.style.display = 'none';
+        imagePreviewPlaceholder.style.display = 'block';
+        removeImageBtn.style.display = 'none';
+    }
+
+    // --- Messaging Logic ---
+    function showMessage(message, isError = false) {
+      messageArea.textContent = message;
+      messageArea.className = isError ? 'message-error' : 'message-success';
+      setTimeout(() => {
+          messageArea.textContent = '';
+          messageArea.className = '';
+      }, 5000);
+    }
+
+    // --- LocalStorage CRUD Logic ---
+    // Function to load and display saved websites
+    function loadSavedWebsites() {
+      try {
+        const savedSites = JSON.parse(localStorage.getItem('savedWebsites')) || [];
+        if (savedWebsitesList) {
+            savedWebsitesList.innerHTML = '';
+
+            if (savedSites.length > 0) {
+              savedSites.forEach((site, index) => {
+                const li = document.createElement('li');
+                let siteContent = '';
+                if (site.image) {
+                  siteContent += `<div class="website-image-container"><img src="${site.image}" alt="${site.title || 'Website image'}" class="website-image"></div>`;
+                }
+                siteContent += `
+                  <strong>${site.title || 'Sin Título'}</strong>
+                  <a href="${site.url}" target="_blank">${site.url}</a>
+                `;
+                
+                // Añadir notas personales si existen
+                if (site.notes && site.notes.trim() !== '') {
+                  siteContent += `<div class="site-notes"><strong>Mis notas:</strong> ${site.notes}</div>`;
+                }
+                
+                siteContent += `<button class="delete-btn" data-index="${index}">Eliminar</button>`;
+                li.innerHTML = siteContent;
+                savedWebsitesList.appendChild(li);
+              });
+
+              // Add event listeners to delete buttons
+              document.querySelectorAll('.delete-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                  const index = parseInt(this.getAttribute('data-index'));
+                  deleteSavedWebsite(index);
+                });
+              });
+            } else {
+              savedWebsitesList.innerHTML = '<li>Aún no has guardado ningún sitio.</li>';
+            }
+        }
+      } catch (error) {
+        console.error('Error loading saved websites:', error);
+        if (savedWebsitesList) {
+            savedWebsitesList.innerHTML = '<li>Error al cargar los sitios. Intenta de nuevo más tarde.</li>';
+        }
+      }
+    }
+
+    // Function to delete a saved website
+    function deleteSavedWebsite(index) {
+      try {
+        let savedSites = JSON.parse(localStorage.getItem('savedWebsites')) || [];
+        if (index >= 0 && index < savedSites.length) {
+          savedSites.splice(index, 1);
+          localStorage.setItem('savedWebsites', JSON.stringify(savedSites));
+          loadSavedWebsites();
+        }
+      } catch (error) {
+        console.error('Error deleting website:', error);
+      }
+    }
+
+    // Event listener for the save form submission
+    if (saveForm) {
+        const notesInput = document.getElementById('notes-input');
+        const titleInput = document.getElementById('title-input');
+        
+        saveForm.addEventListener('submit', (event) => {
+          event.preventDefault();
+          messageArea.textContent = '';
+          messageArea.className = '';
+
+          const url = urlInput.value.trim();
+          const notes = notesInput.value.trim();
+          const customTitle = titleInput.value.trim();
+
+          if (!url) {
+            showMessage('Por favor, completa la URL.', true);
+            return;
+          }
+
+          try {
+              new URL(url);
+          } catch (_) {
+              showMessage('Por favor, introduce una URL válida.', true);
+              return;
+          }
+
+          try {
+            let savedSites = JSON.parse(localStorage.getItem('savedWebsites')) || [];
+            let title = customTitle || 'Sitio Web';
+            if (!customTitle) {
+                try {
+                    title = new URL(url).hostname.replace(/^www\./, '');
+                } catch (_) { /* Ignore URL parsing errors for title */ }
+            }
+
+            const newSite = {
+              url,
+              title: title,
+              notes: notes,
+              dateAdded: new Date().toISOString()
+            };
+
+            if (imageInput.files[0] && imagePreview.src.startsWith('data:image')) {
+              newSite.image = imagePreview.src;
+            }
+
+            savedSites.push(newSite);
+            localStorage.setItem('savedWebsites', JSON.stringify(savedSites));
+
+            showMessage('¡Sitio guardado con éxito!');
+            saveForm.reset();
+            resetImagePreview();
+            loadSavedWebsites();
+
+            setTimeout(closeModal, 1500);
+
+          } catch (error) {
+            console.error('Error saving website:', error);
+            showMessage('Ocurrió un error al guardar el sitio.', true);
+          }
+        });
+    }
+
+    // Load saved websites when the page loads
+    document.addEventListener('DOMContentLoaded', loadSavedWebsites);
+
+    // --- Modo Oscuro ---
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+    
+    // Verificar si hay una preferencia guardada
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+    }
+    
+    // Manejar el cambio de tema
+    themeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      
+      // Guardar preferencia en localStorage
+      if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
+</body>
+</html>
+
